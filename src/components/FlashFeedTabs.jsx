@@ -11,7 +11,7 @@ const FlashFeedTabs = () => {
   const { news, index, setIndex } = useContext(NewsContext);
 
   // const [index, setIndex] = useState(1); this is no longer required since we are using context now
-  
+
   const [routes] = useState([
     { key: "first", title: "Discover" },
     { key: "second", title: "News" },

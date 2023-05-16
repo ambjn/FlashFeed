@@ -39,8 +39,8 @@ const SingleNews = ({ item, index }) => {
           style={styles.footer}
           source={{ uri: item.urlToImage }}>
           <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
-            <Text style={{ fontSize: 15, color: "white" }}>
-              {item?.content?.slice(0, 45)}
+            <Text style={{ fontSize: 15, color: "white" }} numberOfLines={2}>
+              {item?.content}
             </Text>
             <Text style={{ fontSize: 17, fontWeight: "bold", color: "white" }}>
               Read More

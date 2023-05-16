@@ -16,10 +16,10 @@ const Context = ({ children }) => {
 
   useEffect(() => {
     fetchNews();
-  }, [category])
-  
+  }, [category]);
+
   return (
-    <NewsContext.Provider value={{ news, index, setIndex ,fetchNews}}>
+    <NewsContext.Provider value={{ news, index, setIndex, fetchNews }}>
       {children}
     </NewsContext.Provider>
   );
