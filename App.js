@@ -3,7 +3,7 @@ import FlashFeedTabs from "./src/components/FlashFeedTabs";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container, backgroundColor: "#282c35" }}>
       <FlashFeedTabs />
     </View>
   );
