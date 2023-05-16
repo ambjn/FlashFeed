@@ -1,13 +1,17 @@
 import { StyleSheet, useWindowDimensions } from "react-native";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { SceneMap, TabView } from "react-native-tab-view";
 import DiscoverScreen from "../screens/DiscoverScreen";
 import NewsScreen from "../screens/NewsScreen";
 import TopNavigation from "./TopNavigation";
+import { NewsContext } from "../api/Context";
 
 const FlashFeedTabs = () => {
   const layout = useWindowDimensions();
-  const [index, setIndex] = useState(1);
+  const { news, index, setIndex } = useContext(NewsContext);
+
+  // const [index, setIndex] = useState(1); this is no longer required since we are using context now
+  
   const [routes] = useState([
     { key: "first", title: "Discover" },
     { key: "second", title: "News" },
