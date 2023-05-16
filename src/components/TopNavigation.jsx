@@ -19,8 +19,8 @@ const TopNavigation = ({ index, setIndex }) => {
         <TouchableOpacity
           style={styles.left}
           onPress={() => setIndex(index === 0 ? 1 : 0)}>
-          <SimpleLineIcons name='arrow-left' size={15} color='#007FFF' />
-          <Text style={{ ...styles.text, color: "lightgrey" }}>Discover</Text>
+          <SimpleLineIcons name='arrow-left' size={15} color='#007FFF'/>
+          <Text style={{ ...styles.text, color: "lightgrey",padding:4 }}>Discover</Text>
         </TouchableOpacity>
       )}
       <Text style={{ ...styles.center, color: "white" }}>
@@ -29,7 +29,7 @@ const TopNavigation = ({ index, setIndex }) => {
       {index ? (
         <TouchableOpacity style={styles.right}>
           <Text style={styles.text}>
-            <SimpleLineIcons name='reload' size={24} color='black' />
+            <SimpleLineIcons name='reload' size={24} color='#007FFF' />
           </Text>
         </TouchableOpacity>
       ) : (
