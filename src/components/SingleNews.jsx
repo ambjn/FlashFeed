@@ -21,7 +21,8 @@ const SingleNews = ({ item, index }) => {
       }}>
       <Image
         source={{ uri: item.urlToImage }}
-        style={{ height: "40%", width: windowWidth, resizeMethod: "cover" }}
+        style={{ height: "40%", width: windowWidth }}
+        resizeMode='cover'
       />
       <View style={{ ...styles.description, backgroundColor: "#282C35" }}>
         <Text style={{ ...styles.title, color: "white" }}>{item.title}</Text>
