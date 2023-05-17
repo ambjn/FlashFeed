@@ -14,7 +14,7 @@ import SingleNews from "../components/SingleNews";
 
 const Search = () => {
   const {
-    news: { articles },
+    news: { articles }, darkTheme
   } = useContext(NewsContext);
 
   const [searchResults, setSearchResults] = useState([]);
@@ -36,10 +36,14 @@ const Search = () => {
   return (
     <View style={{ width: "100%", position: "relative" }}>
       <TextInput
-        style={{ ...styles.search, backgroundColor: "black", color: "white" }}
+        style={{
+          ...styles.search,
+          backgroundColor: darkTheme ? "black" : "white",
+          color: darkTheme ? "white" : "black",
+        }}
         onChangeText={(text) => handleSearch(text)}
         placeholder='search for news on FlashFeed⚡'
-        placeholderTextColor={"white"}
+        placeholderTextColor={darkTheme ? "white" : "grey"}
       />
       <View style={styles.searchResults}>
         {searchResults.slice(0, 3).map((n) => (
@@ -50,8 +54,8 @@ const Search = () => {
             <Text
               style={{
                 ...styles.singleResult,
-                backgroundColor: "transparent",
-                color: "white",
+                backgroundColor: darkTheme ? "black" : "white",
+                color: darkTheme ? "white" : "black",
               }}>
               {n.title}
             </Text>

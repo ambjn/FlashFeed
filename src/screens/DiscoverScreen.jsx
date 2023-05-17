@@ -16,13 +16,16 @@ const windowWidth = Dimensions.get("window").width;
 const SLIDE_WIDTH = Math.round(windowWidth / 3.5);
 
 const DiscoverScreen = () => {
-  const { setCategory, setSource } = useContext(NewsContext);
+  const { setCategory, setSource, darkTheme } = useContext(NewsContext);
   return (
     <View style={styles.discoverContainer}>
       {/* search */}
-      <Search/>
+      <Search />
       {/* categories */}
-      <Text style={{ ...styles.subtitle, color: "#ffffff" }}>Categories</Text>
+      <Text
+        style={{ ...styles.subtitle, color: darkTheme ? "white" : "black" }}>
+        Categories
+      </Text>
       <Carousel
         layout='default'
         data={categories}
@@ -35,7 +38,8 @@ const DiscoverScreen = () => {
               style={styles.categoryImage}
               resizeMode='contain'
             />
-            <Text style={{ ...styles.name, color: "#ffffff" }}>
+            <Text
+              style={{ ...styles.name, color: darkTheme ? "white" : "black" }}>
               {item.name}
             </Text>
           </TouchableOpacity>
@@ -47,7 +51,10 @@ const DiscoverScreen = () => {
         inactiveSlideOpacity={0.5}
       />
       {/* sources */}
-      <Text style={{ ...styles.subtitle, color: "#ffffff" }}>Sources</Text>
+      <Text
+        style={{ ...styles.subtitle, color: darkTheme ? "white" : "black" }}>
+        Sources
+      </Text>
       <View style={styles.sources}>
         {sources.map((source) => (
           <TouchableOpacity

@@ -8,10 +8,12 @@ import {
   TouchableOpacity,
   Linking,
 } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
+import { NewsContext } from "../api/Context";
 const windowHeight = Dimensions.get("window").height;
 const windowWidth = Dimensions.get("window").width;
 const SingleNews = ({ item, index }) => {
+  const { darkTheme } = useContext(NewsContext);
   return (
     <View
       style={{
@@ -24,14 +26,21 @@ const SingleNews = ({ item, index }) => {
         style={{ height: "40%", width: windowWidth }}
         resizeMode='cover'
       />
-      <View style={{ ...styles.description, backgroundColor: "#282C35" }}>
-        <Text style={{ ...styles.title, color: "white" }}>{item.title}</Text>
-        <Text style={{ ...styles.content, color: "white" }}>
+      <View
+        style={{
+          ...styles.description,
+          backgroundColor: darkTheme ? "#282C35" : "white",
+        }}>
+        <Text style={{ ...styles.title, color: darkTheme ? "white" : "black" }}>
+          {item.title}
+        </Text>
+        <Text
+          style={{ ...styles.content, color: darkTheme ? "white" : "black" }}>
           {item.description}
         </Text>
-        <Text style={{ color: "white" }}>
+        <Text style={{ color: darkTheme ? "white" : "black" }}>
           FlashFeed By:
-          <Text style={{ color: "white" }}>
+          <Text style={{ color: darkTheme ? "white" : "black" }}>
             {`  ${item.author}` ?? "unknown"}
           </Text>
         </Text>
@@ -40,10 +49,17 @@ const SingleNews = ({ item, index }) => {
           style={styles.footer}
           source={{ uri: item.urlToImage }}>
           <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
-            <Text style={{ fontSize: 15, color: "white" }} numberOfLines={2}>
+            <Text
+              style={{ fontSize: 15, color: darkTheme ? "white" : "black" }}
+              numberOfLines={2}>
               {item?.content}
             </Text>
-            <Text style={{ fontSize: 17, fontWeight: "bold", color: "white" }}>
+            <Text
+              style={{
+                fontSize: 17,
+                fontWeight: "bold",
+                color: darkTheme ? "white" : "black",
+              }}>
               Read More
             </Text>
           </TouchableOpacity>
