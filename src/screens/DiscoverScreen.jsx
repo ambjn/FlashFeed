@@ -15,7 +15,7 @@ const windowWidth = Dimensions.get("window").width;
 const SLIDE_WIDTH = Math.round(windowWidth / 3.5);
 
 const DiscoverScreen = () => {
-  const { setCategory } = useContext(NewsContext);
+  const { setCategory, setSource } = useContext(NewsContext);
   return (
     <View style={styles.discoverContainer}>
       {/* search */}
@@ -45,6 +45,17 @@ const DiscoverScreen = () => {
         inactiveSlideOpacity={0.5}
       />
       {/* sources */}
+      <Text style={{ ...styles.subtitle, color: "#ffffff" }}>Sources</Text>
+      <View style={styles.sources}>
+        {sources.map((source) => (
+          <TouchableOpacity
+            onPress={() => setSource(source.id)}
+            key={source.id}
+            style={styles.sourceContainer}>
+            <Image source={{ uri: source.pic }} style={styles.sourceImage} />
+          </TouchableOpacity>
+        ))}
+      </View>
     </View>
   );
 };
@@ -69,6 +80,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
   },
+  sources: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    paddingVertical: 15,
+  },
+  sourceContainer: {height:150,width:"40%",borderRadius:10,margin:10,backgroundColor:"#cc313d"},
+  sourceImage: { height: "100%", borderRadius: 10, resizeMode: "cover" },
 });
 
 export default DiscoverScreen;
