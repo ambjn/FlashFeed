@@ -80,6 +80,7 @@ export const sources = [
   //   name: "Google News",
   //   pic: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Google_News_icon.png",
   // },
+  // google-news is not available
 ];
 
 export const BASE_URL = "https://saurav.tech/NewsAPI/";
