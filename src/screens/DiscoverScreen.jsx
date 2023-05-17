@@ -86,7 +86,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     paddingVertical: 15,
   },
-  sourceContainer: {height:150,width:"40%",borderRadius:10,margin:10,backgroundColor:"#cc313d"},
+  sourceContainer: {
+    height: 150,
+    width: "40%",
+    borderRadius: 10,
+    margin: 10,
+    backgroundColor: "#cc313d",
+  },
   sourceImage: { height: "100%", borderRadius: 10, resizeMode: "cover" },
 });
 
