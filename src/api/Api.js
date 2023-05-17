@@ -68,7 +68,7 @@ export const sources = [
   {
     id: "cnn",
     name: "CNN",
-    pic: "https://bankimooncentre.org/wp-content/uploads/2020/06/cnn-logo-square.png",
+    pic: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/CNN_International_logo.svg/1280px-CNN_International_logo.svg.png",
   },
   {
     id: "fox-news",
