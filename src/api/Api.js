@@ -75,11 +75,11 @@ export const sources = [
     name: "Fox News",
     pic: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Fox_News_Channel_logo.svg/768px-Fox_News_Channel_logo.svg.png",
   },
-  {
-    id: "google-news",
-    name: "Google News",
-    pic: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Google_News_icon.png",
-  },
+  // {
+  //   id: "google-news",
+  //   name: "Google News",
+  //   pic: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Google_News_icon.png",
+  // },
 ];
 
 export const BASE_URL = "https://saurav.tech/NewsAPI/";
