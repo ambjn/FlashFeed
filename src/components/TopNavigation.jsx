@@ -61,7 +61,8 @@ const TopNavigation = ({ index, setIndex }) => {
           <Text
             style={{
               color: darkTheme ? "lightgrey" : "black",
-              fontSize: 12,
+              fontSize: 14,
+              fontWeight:"800"
             }}>
             FlashFeed🔥
           </Text>
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
   left: {
     flexDirection: "row",
     alignItems: "center",
-    width: 80,
+    width: 90,
     justifyContent: "space-between",
   },
   text: { fontSize: 16 },
