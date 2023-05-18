@@ -11,7 +11,6 @@ import { NewsContext } from "../api/Context";
 import { categories, sources } from "../api/Api";
 import Search from "../components/Search";
 
-
 const DiscoverScreen = () => {
   const { setCategory, setSource, darkTheme } = useContext(NewsContext);
   const [currentCategory, setCurrentCategory] = useState("General");
@@ -91,7 +90,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     paddingBottom: 8,
-    paddingTop:20,
+    paddingTop: 20,
     marginHorizontal: 5,
     borderBottomColor: "#007FFF",
     borderBottomWidth: 5,
