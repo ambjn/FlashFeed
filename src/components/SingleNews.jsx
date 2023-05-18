@@ -10,16 +10,17 @@ import {
 } from "react-native";
 import React, { useContext } from "react";
 import { NewsContext } from "../api/Context";
+
 const windowHeight = Dimensions.get("window").height;
 const windowWidth = Dimensions.get("window").width;
-const SingleNews = ({ item, index }) => {
+
+const SingleNews = ({ item }) => {
   const { darkTheme } = useContext(NewsContext);
   return (
     <View
       style={{
         height: windowHeight,
         width: windowWidth,
-        // transform: [{ scaleY: -1 }], //to inverse the news
       }}>
       <Image
         source={{ uri: item.urlToImage }}
@@ -38,14 +39,22 @@ const SingleNews = ({ item, index }) => {
           style={{ ...styles.content, color: darkTheme ? "white" : "black" }}>
           {item.description}
         </Text>
-        <Text style={{ color: darkTheme ? "white" : "black" }}>
+        <Text
+          style={{
+            color: darkTheme ? "white" : "black",
+            paddingVertical: 20,
+            opacity: 0.75,
+          }}>
           FlashFeed By:
-          <Text style={{ color: darkTheme ? "white" : "black" }}>
+          <Text
+            style={{
+              color: darkTheme ? "white" : "black",
+            }}>
             {`  ${item.author}` ?? "unknown"}
           </Text>
         </Text>
         <ImageBackground
-          blurRadius={30}
+          blurRadius={100}
           style={styles.footer}
           source={{ uri: item.urlToImage }}>
           <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
@@ -59,8 +68,9 @@ const SingleNews = ({ item, index }) => {
                 fontSize: 17,
                 fontWeight: "bold",
                 color: darkTheme ? "white" : "black",
+                paddingVertical: 5,
               }}>
-              Read More
+              Read More....
             </Text>
           </TouchableOpacity>
         </ImageBackground>
@@ -73,12 +83,11 @@ export default SingleNews;
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 25,
-    fontWeight: "bold",
+    fontSize: 22,
+    fontWeight: "400",
     paddingBottom: 10,
-    color: "white",
   },
-  content: { fontSize: 18, paddingBottom: 10 },
+  content: { fontSize: 18, paddingVertical: 10,opacity:0.8 },
   footer: {
     height: 100,
     width: windowWidth,
@@ -89,5 +98,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginBottom: 25,
   },
-  description: { padding: 15, flex: 1 },
+  description: { padding: 15, flex: 1,},
 });

@@ -8,6 +8,7 @@ const NewsScreen = () => {
   const {
     news: { articles },
   } = useContext(NewsContext);
+  
   const windowHeight = Dimensions.get("window").height;
 
   const [activeIndex, setActiveIndex] = useState();
@@ -17,7 +18,7 @@ const NewsScreen = () => {
         <Carousel
           vertical={true}
           layout={"stack"}
-          data={articles.slice(0, 10)}
+          data={articles.slice(0, 15)}
           sliderHeight={300}
           itemHeight={windowHeight}
           onSnapToItem={(index) => setActiveIndex(index)}
