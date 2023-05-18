@@ -8,14 +8,16 @@ import { NewsContext } from "../api/Context";
 
 const FlashFeedTabs = () => {
   const layout = useWindowDimensions();
-  const { news, index, setIndex } = useContext(NewsContext);
+  const { index, setIndex } = useContext(NewsContext);
 
-  // const [index, setIndex] = useState(1); this is no longer required since we are using context now
+  // const [index, setIndex] = useState(1);
+  // this is no longer required since we are using context now
 
   const [routes] = useState([
     { key: "first", title: "Discover" },
     { key: "second", title: "News" },
   ]);
+  
   const renderScene = SceneMap({
     first: DiscoverScreen,
     second: NewsScreen,
@@ -33,4 +35,4 @@ const FlashFeedTabs = () => {
 
 export default FlashFeedTabs;
 
-const styles = StyleSheet.create({});
+
