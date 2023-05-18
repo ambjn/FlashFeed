@@ -1,8 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import { getNewsAPI, getSourceAPI } from "../api/Api";
-export const NewsContext = createContext();
 
+export const NewsContext = createContext();
 const Context = ({ children }) => {
   const [news, setNews] = useState([]);
   const [category, setCategory] = useState("general");
