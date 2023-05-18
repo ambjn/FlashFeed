@@ -64,7 +64,7 @@ const Search = () => {
       </View>
       <Modal
         animationType='slide'
-        transparent={false}
+        transparent={true}
         visible={modalVisible}
         onRequestClose={() => setModalVisible(!modalVisible)}>
         <TouchableOpacity
@@ -77,7 +77,7 @@ const Search = () => {
           }}>
           <Entypo name='circle-with-cross' size={30} color='white' />
         </TouchableOpacity>
-        <View style={{ height: "100%" }}>
+        <View style={{ height: "100%"}}>
           <SingleNews item={currentNews} />
         </View>
       </Modal>
