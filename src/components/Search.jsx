@@ -46,7 +46,7 @@ const Search = () => {
         placeholderTextColor={darkTheme ? "white" : "grey"}
       />
       <View style={styles.searchResults}>
-        {searchResults.slice(0, 3).map((n) => (
+        {searchResults.slice(0, 5).map((n) => (
           <TouchableOpacity
             key={n.title}
             activeOpacity={0.7}
@@ -91,11 +91,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     fontSize: 15,
     marginBottom: 15,
-  },
-  searchResults: {
-    position: "absolute",
-    zIndex: 1,
-    top: 50,
   },
   singleResult: {
     borderRadius: 5,
